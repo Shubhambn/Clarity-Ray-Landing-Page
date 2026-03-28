@@ -45,7 +45,7 @@ export function FinalCTA({ onJoinClick }: FinalCTAProps) {
 
         {/* Bottom meta */}
         <p className="mt-10 text-xs font-mono text-muted-foreground tracking-wide">
-          OPEN SOURCE · MIT LICENCE · BUILT FOR INDIA AND BEYOND
+          OPEN SOURCE · MIT LICENCE · BUILT FOR EVERYONE
         </p>
       </div>
     </section>

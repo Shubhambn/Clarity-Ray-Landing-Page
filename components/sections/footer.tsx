@@ -28,7 +28,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-xs font-mono text-muted-foreground">
-            © 2026 ClarityRay · Open source medical AI runtime
+            © 2026 ClarityRay · Open source everyone
           </p>
         </div>
 
