@@ -58,7 +58,7 @@ export function FeedbackSection() {
             <span className="font-serif italic text-primary">ClarityRay</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            We&apos;re building this for you. Tell us what you&apos;d expect from a local medical AI tool.
+            We&apos;re building this in the open. Tell us what you&apos;d expect from a browser-native medical AI tool — or which model you want next.
           </p>
         </div>
 

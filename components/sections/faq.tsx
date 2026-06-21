@@ -7,27 +7,32 @@ const faqs = [
   {
     question: "Is this a medical diagnosis tool?",
     answer:
-      "No. ClarityRay is a screening assistant only. It provides AI-generated signals that may help prioritize clinical decisions, but it is NOT a substitute for professional medical diagnosis. All results include mandatory disclaimers and should always be reviewed by qualified healthcare professionals.",
+      "No. ClarityRay is a screening assistant only. It provides AI-generated signals that may help prioritize clinical decisions, but it is NOT a substitute for professional medical diagnosis. Every result includes a mandatory non-diagnostic disclaimer and should always be reviewed by a qualified healthcare professional.",
   },
   {
-    question: "Does my data leave my device?",
+    question: "Does my scan leave my device?",
     answer:
-      "Never. ClarityRay runs 100% locally on your machine. Your scans are never uploaded, transmitted, or stored anywhere except your own device. We have no servers, no cloud processing, and no way to access your data — by design.",
+      "Never. Inference runs entirely in your browser using ONNX Runtime Web (WebAssembly). Zero network requests happen during analysis — your scan stays in browser memory and is never uploaded. Privacy is a hard architectural constraint, not a setting you can toggle.",
   },
   {
-    question: "Do I need a GPU?",
+    question: "Do I need to install anything?",
     answer:
-      "No. ClarityRay works on CPU, though a GPU will make processing faster. Most modern laptops can run analyses in 30-60 seconds on CPU. If you have a discrete GPU, processing drops to under 10 seconds.",
+      "No. ClarityRay runs in a normal web browser at clarityrun.vercel.app — no install, no account, no terminal. The model file downloads once and is cached via the Cache API and IndexedDB, so repeat analyses work even offline.",
   },
   {
-    question: "Is it free?",
+    question: "How does it run a model without a server?",
     answer:
-      "Yes, completely free and open source under the MIT license. No subscriptions, no hidden costs, no premium tiers. ClarityRay is built for accessibility — every doctor, clinic, and patient should have access regardless of budget.",
+      "Each model ships with a clarity.json contract describing its input shape, normalization, output classes, thresholds, and safety tier. The runtime reads that spec, preprocesses your image into an NCHW Float32Array, runs ONNX inference in WebAssembly, and maps the output to screening-safe language. Adding a new model needs no runtime code changes.",
   },
   {
-    question: "When will it launch?",
+    question: "Can I publish my own model?",
     answer:
-      "We're currently in active development. Join the early access waitlist to be notified when the first version is ready for testing. We're prioritizing chest X-ray screening for the initial release.",
+      "Yes. Package a trained ONNX model with the clarity converter CLI (clarityray upload), which validates the graph, generates the spec, and can push artifacts to Hugging Face and register them with the platform. Once published, the model appears in the browser and runs through the same generic pipeline.",
+  },
+  {
+    question: "Is it free and open source?",
+    answer:
+      "Yes — completely free under the MIT license. No subscriptions, no premium tiers, no hidden commercial incentives. The full source, architecture docs, and model contract live on GitHub for inspection and contribution.",
   },
 ];
 

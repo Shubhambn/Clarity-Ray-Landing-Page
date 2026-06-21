@@ -5,6 +5,8 @@ import { HeroSection } from "@/components/sections/hero";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { ValueSection } from "@/components/sections/value";
 import { WhoIsThisFor } from "@/components/sections/who-is-this-for";
+import { Architecture } from "@/components/sections/architecture";
+import { DocsSection } from "@/components/sections/docs";
 import { FeedbackSection } from "@/components/sections/feedback";
 import { FAQSection } from "@/components/sections/faq";
 import { TrustSection } from "@/components/sections/trust";
@@ -27,15 +29,17 @@ export default function Home() {
       
       {/* Content */}
       <div className="relative z-10">
-        <Navbar onJoinClick={openWaitlist} />
+        <Navbar />
         <main>
-          <HeroSection onJoinClick={openWaitlist} />
+          <HeroSection />
           <HowItWorks />
           <ValueSection />
           <WhoIsThisFor />
+          <Architecture />
+          <DocsSection />
+          <TrustSection />
           <FeedbackSection />
           <FAQSection />
-          <TrustSection />
           <FinalCTA onJoinClick={openWaitlist} />
         </main>
         <Footer />

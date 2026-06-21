@@ -1,30 +1,33 @@
 "use client";
 
-import { Github } from "lucide-react";
+import { Github, ArrowUpRight } from "lucide-react";
+import { SITE } from "@/lib/constants";
 
-interface NavbarProps {
-  onJoinClick: () => void;
-}
-
-export function Navbar({ onJoinClick }: NavbarProps) {
+export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <a href="#top" className="flex items-center gap-2">
             <span className="text-lg font-medium tracking-tight text-foreground">
               Clarity<span className="text-primary">Ray</span>
             </span>
-          </div>
+          </a>
 
           {/* Nav Links - Hidden on mobile */}
-          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+          <div className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
             <a href="#how-it-works" className="hover:text-foreground transition-colors">
               How it works
             </a>
             <a href="#features" className="hover:text-foreground transition-colors">
               Features
+            </a>
+            <a href="#architecture" className="hover:text-foreground transition-colors">
+              Architecture
+            </a>
+            <a href="#docs" className="hover:text-foreground transition-colors">
+              Docs
             </a>
             <a href="#faq" className="hover:text-foreground transition-colors">
               FAQ
@@ -36,12 +39,14 @@ export function Navbar({ onJoinClick }: NavbarProps) {
             {/* Status pill */}
             <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5">
               <div className="w-1.5 h-1.5 rounded-full bg-primary animate-blink" />
-              <span className="text-xs font-mono text-primary">IN DEVELOPMENT</span>
+              <span className="text-xs font-mono text-primary">LIVE · BROWSER-NATIVE</span>
             </div>
 
             {/* GitHub button */}
             <a
-              href="#"
+              href={SITE.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github className="w-4 h-4" />
@@ -49,12 +54,15 @@ export function Navbar({ onJoinClick }: NavbarProps) {
             </a>
 
             {/* CTA Button */}
-            <button
-              onClick={onJoinClick}
-              className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
+            <a
+              href={SITE.appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
             >
-              Join early access
-            </button>
+              Launch app
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </div>

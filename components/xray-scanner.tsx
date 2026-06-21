@@ -3,16 +3,16 @@
 import { useEffect, useState, useRef } from "react";
 
 const logs = [
-  { delay: 700, type: "ok", text: "> clarityray v1.0.0 initialized" },
-  { delay: 1200, type: "", text: "> loading model weights... lung_model.pth" },
-  { delay: 1900, type: "ok", text: "> DenseNet121 loaded on CPU [2.1s]" },
-  { delay: 2400, type: "", text: "> preprocessing: resize 224x224, normalize" },
-  { delay: 3000, type: "", text: "> running forward pass..." },
+  { delay: 700, type: "ok", text: "> clarityray runtime · reading clarity.json" },
+  { delay: 1200, type: "", text: "> fetch densenet121-chest/model.onnx (cached)" },
+  { delay: 1900, type: "ok", text: "> sha-256 integrity verified" },
+  { delay: 2400, type: "", text: "> ONNX Runtime Web session · WASM backend" },
+  { delay: 3000, type: "", text: "> preprocess: 224x224 NCHW Float32Array" },
   { delay: 3700, type: "warn", text: "> attention: high gradient zone (R-upper)" },
-  { delay: 4200, type: "err", text: "> nodule confidence: 87.3% — FLAGGED" },
-  { delay: 4700, type: "ok", text: "> gradcam overlay generated successfully" },
-  { delay: 5200, type: "ok", text: "> disclaimer enforced · result wrapped" },
-  { delay: 5700, type: "ok", text: "> data never left this machine" },
+  { delay: 4200, type: "err", text: "> possible finding: 87.3% — FLAGGED" },
+  { delay: 4700, type: "ok", text: "> heatmap overlay generated successfully" },
+  { delay: 5200, type: "ok", text: "> safety tier enforced · result wrapped" },
+  { delay: 5700, type: "ok", text: "> 0 network requests · scan never left browser" },
 ];
 
 export function XRayScanner() {

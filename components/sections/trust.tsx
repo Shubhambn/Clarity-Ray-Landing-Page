@@ -5,8 +5,8 @@ import { Shield, AlertTriangle, Beaker } from "lucide-react";
 const trustPoints = [
   {
     icon: Shield,
-    title: "Runs locally — no data leaves your device",
-    description: "Every scan you analyze stays on your machine. Zero cloud processing. Zero data transmission. Your patient data belongs to you.",
+    title: "Runs in your browser — no data leaves the page",
+    description: "Inference runs in WebAssembly on-device. Zero network requests happen during analysis. Your scan stays in browser memory and is never uploaded.",
   },
   {
     icon: AlertTriangle,
@@ -15,8 +15,8 @@ const trustPoints = [
   },
   {
     icon: Beaker,
-    title: "Built for safe experimentation",
-    description: "Open source, auditable, and transparent. Every model shows its training data, accuracy metrics, and known limitations before you run anything.",
+    title: "Auditable by design",
+    description: "Open source under MIT. Every model is verified by SHA-256 and declares its safety tier, thresholds, and known limitations in clarity.json before you run anything.",
   },
 ];
 
@@ -57,7 +57,7 @@ export function TrustSection() {
           <div>
             <div className="text-4xl sm:text-5xl font-serif italic text-primary">0</div>
             <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-              hidden commercial incentives — trust the code, not our word
+              network requests during analysis — trust the code, not our word
             </p>
           </div>
           <div>

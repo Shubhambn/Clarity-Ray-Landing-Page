@@ -23,10 +23,37 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'ClarityRay - Medical AI that runs on your machine',
-  description: 'Upload a scan, run AI locally, and get structured results. No cloud. No data sharing. Open source medical AI runtime.',
-  generator: 'v0.app',
-  keywords: ['medical AI', 'local AI', 'chest X-ray', 'diagnostic AI', 'open source', 'privacy-first'],
+  metadataBase: new URL('https://clarityrun.vercel.app'),
+  title: 'ClarityRay — Medical AI that runs in your browser',
+  description:
+    'Browser-native medical screening AI. Pick a model, upload a scan, and run ONNX inference on-device in WebAssembly. No uploads, no servers — your scan never leaves the page. Open source, MIT.',
+  applicationName: 'ClarityRay',
+  authors: [{ name: 'ClarityRay' }],
+  generator: 'Next.js',
+  keywords: [
+    'medical AI',
+    'browser AI',
+    'ONNX Runtime Web',
+    'WebAssembly inference',
+    'chest X-ray screening',
+    'on-device AI',
+    'privacy-first',
+    'open source medical AI',
+  ],
+  openGraph: {
+    type: 'website',
+    url: 'https://clarityrun.vercel.app/',
+    siteName: 'ClarityRay',
+    title: 'ClarityRay — Medical AI that runs in your browser',
+    description:
+      'Spec-driven, browser-native screening. ONNX inference runs on-device in WebAssembly — no uploads, no servers. Open source, MIT.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ClarityRay — Medical AI that runs in your browser',
+    description:
+      'Browser-native medical screening. On-device ONNX inference, zero uploads. Open source, MIT.',
+  },
   icons: {
     icon: [
       {

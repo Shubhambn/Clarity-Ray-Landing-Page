@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
+import { SITE } from "@/lib/constants";
 
 interface FinalCTAProps {
   onJoinClick: () => void;
@@ -15,27 +16,32 @@ export function FinalCTA({ onJoinClick }: FinalCTAProps) {
       <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Headline */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-balance">
-          Be among the first to try
+          Run your first analysis
           <br />
-          <span className="font-serif italic text-primary">ClarityRay</span>
+          in your <span className="font-serif italic text-primary">browser.</span>
         </h2>
 
         {/* Subtext */}
         <p className="text-muted-foreground mt-6 mb-10 leading-relaxed max-w-lg mx-auto">
-          Download ClarityRay and run your first analysis in under five minutes. No account. No cloud. No cost. Built for every doctor, clinic, and patient.
+          Open the app, pick a model, and screen a scan in seconds. No account, no
+          upload, no cost — and your scan never leaves the page.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            onClick={onJoinClick}
+          <a
+            href={SITE.analysisUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-all text-base"
           >
-            Join early access
-            <ArrowRight className="w-4 h-4" />
-          </button>
+            Launch the app
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
           <a
-            href="#"
+            href={SITE.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-4 border border-border text-muted-foreground rounded-xl hover:border-muted-foreground hover:text-foreground transition-all"
           >
             <Github className="w-4 h-4" />
@@ -43,9 +49,17 @@ export function FinalCTA({ onJoinClick }: FinalCTAProps) {
           </a>
         </div>
 
+        {/* Secondary action */}
+        <button
+          onClick={onJoinClick}
+          className="mt-6 text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
+        >
+          Or get notified about new models &amp; releases →
+        </button>
+
         {/* Bottom meta */}
         <p className="mt-10 text-xs font-mono text-muted-foreground tracking-wide">
-          OPEN SOURCE · MIT LICENCE · BUILT FOR EVERYONE
+          OPEN SOURCE · MIT LICENCE · BROWSER-NATIVE
         </p>
       </div>
     </section>

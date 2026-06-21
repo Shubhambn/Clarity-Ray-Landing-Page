@@ -1,13 +1,14 @@
 "use client";
 
-import { Upload, Cpu, FileText } from "lucide-react";
+import { LayoutGrid, Cpu, FileText } from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    icon: Upload,
-    title: "Upload scan",
-    description: "Drag and drop your medical image — JPEG, PNG, or DICOM. Format validation happens automatically.",
+    icon: LayoutGrid,
+    title: "Browse & select a model",
+    description:
+      "Open /models to browse published, spec-driven models. Pick one and click 'Use for Analysis' — its model.onnx downloads once and is cached in your browser.",
     color: "text-primary",
     bgColor: "bg-primary/10",
     borderColor: "border-primary/20",
@@ -15,8 +16,9 @@ const steps = [
   {
     number: "02",
     icon: Cpu,
-    title: "Run AI locally",
-    description: "The model runs entirely on your device. No internet required. No data leaves your machine.",
+    title: "Run inference on-device",
+    description:
+      "Upload a PNG or JPEG and click Analyze. ONNX Runtime Web runs the model in WebAssembly in ~3–8s — zero network requests during analysis.",
     color: "text-amber-400",
     bgColor: "bg-amber-400/10",
     borderColor: "border-amber-400/20",
@@ -24,8 +26,9 @@ const steps = [
   {
     number: "03",
     icon: FileText,
-    title: "Get structured result",
-    description: "Receive a safe, explainable output with confidence levels, attention maps, and clear disclaimers.",
+    title: "Read a persona-aware result",
+    description:
+      "Findings adapt to your role — researcher, clinician, or patient — with confidence context, an attention heatmap, and a mandatory safety disclaimer.",
     color: "text-blue-400",
     bgColor: "bg-blue-400/10",
     borderColor: "border-blue-400/20",
@@ -40,10 +43,10 @@ export function HowItWorks() {
         <div className="mb-16">
           <span className="text-xs font-mono text-primary tracking-widest">// HOW IT WORKS</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight mt-4 text-balance">
-            From zero to result
+            From model to result
             <br />
             in{" "}
-            <span className="font-serif italic text-primary">five minutes.</span>
+            <span className="font-serif italic text-primary">seconds.</span>
           </h2>
         </div>
 

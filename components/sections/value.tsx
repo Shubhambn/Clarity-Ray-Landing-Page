@@ -1,37 +1,55 @@
 "use client";
 
-import { Shield, Zap, Eye, Lock, FileCheck, Layers } from "lucide-react";
+import { Shield, Eye, Lock, FileCheck, Boxes, Users, FileJson, Database } from "lucide-react";
 
 const features = [
   {
     icon: Lock,
-    title: "Fully local execution",
-    description: "Every analysis runs on your machine. No data ever leaves the device. Fully offline after installation.",
+    title: "Browser-native inference",
+    description:
+      "Inference runs in ONNX Runtime Web (WebAssembly) on-device. Scan pixels stay in browser memory — privacy as a hard architectural constraint, not a marketing claim.",
+  },
+  {
+    icon: FileJson,
+    title: "Spec-driven model contract",
+    description:
+      "Every model is described by a clarity.json file. The runtime reads the spec and runs any conforming model — adding a model needs zero code changes.",
+  },
+  {
+    icon: Users,
+    title: "Three-persona result view",
+    description:
+      "Results adapt to who's reading: researchers see thresholds and logs, clinicians see structured interpretation, patients see plain-language, non-diagnostic output.",
   },
   {
     icon: Eye,
-    title: "GradCAM attention maps",
-    description: "See exactly which regions of the scan influenced the result. Visual explainability built in.",
-  },
-  {
-    icon: FileCheck,
-    title: "Plain-language results",
-    description: "No raw probabilities. Every finding is translated into safe, clear, context-appropriate language.",
-  },
-  {
-    icon: Layers,
-    title: "DICOM native support",
-    description: "Upload real clinical DICOM files directly. Silent conversion and normalisation — no extra tools needed.",
-  },
-  {
-    icon: Zap,
-    title: "No setup required",
-    description: "One installer. Everything is bundled and ready. No Python, no terminal, no configuration needed.",
+    title: "Attention heatmaps",
+    description:
+      "Every finding ships with a visual attention overlay so you can see which regions of the scan influenced the screening result.",
   },
   {
     icon: Shield,
-    title: "Safe & explainable",
-    description: "Every result shows what the model was trained on, its known limitations, and mandatory disclaimers.",
+    title: "SHA-256 integrity checks",
+    description:
+      "Model binaries are verified against the hash declared in clarity.json before they ever run, so you know exactly what executed.",
+  },
+  {
+    icon: Database,
+    title: "Cached & offline-capable",
+    description:
+      "Model files are cached via the Cache API and IndexedDB after first download. Later runs skip the fetch and work with no network.",
+  },
+  {
+    icon: FileCheck,
+    title: "Safety-tiered messaging",
+    description:
+      "Raw logits are softmaxed and mapped to screening-safe language using model-declared thresholds — screening, research, or investigational tier.",
+  },
+  {
+    icon: Boxes,
+    title: "Open model platform",
+    description:
+      "A FastAPI + Supabase registry lists published models served from Hugging Face. Researchers publish with the clarity CLI; the runtime stays generic.",
   },
 ];
 

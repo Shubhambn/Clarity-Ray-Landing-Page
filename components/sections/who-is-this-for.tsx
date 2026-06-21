@@ -1,40 +1,55 @@
 "use client";
 
-import { Stethoscope, Code, FlaskConical } from "lucide-react";
+import { Stethoscope, Code, FlaskConical, HeartPulse } from "lucide-react";
 
 const personas = [
   {
-    role: "DOCTOR",
+    role: "CLINICIAN",
     icon: Stethoscope,
     title: "Clinicians & Healthcare Providers",
     description:
-      "Get an early signal before specialist referral. Run AI screening in your clinic without enterprise contracts or cloud dependencies.",
-    quote: "I needed something I could actually use in my clinic — not a research tool that requires a server room.",
+      "Get an early screening signal before specialist referral, with structured interpretation language and confidence context. No enterprise contract, no cloud dependency, no patient data leaving the room.",
+    quote:
+      "I needed something I could actually use in clinic — not a research tool that requires a server room.",
     color: "text-primary",
     bgColor: "bg-primary/10",
     borderColor: "border-primary/30",
   },
   {
-    role: "DEVELOPER",
-    icon: Code,
-    title: "Developers & Engineers",
+    role: "PATIENT",
+    icon: HeartPulse,
+    title: "Patients & Individuals",
     description:
-      "Integrate validated medical AI models into your applications. Open source, well-documented, and easy to extend.",
-    quote: "Finally, a medical AI tool I can actually inspect, understand, and build upon.",
-    color: "text-blue-400",
-    bgColor: "bg-blue-400/10",
-    borderColor: "border-blue-400/30",
+      "See plain-language output with a mandatory non-diagnostic notice and no confusing probability math. Because everything runs in your browser, your scan is never uploaded anywhere.",
+    quote:
+      "It explained what the result might mean in words I understood — and nothing left my laptop.",
+    color: "text-rose-400",
+    bgColor: "bg-rose-400/10",
+    borderColor: "border-rose-400/30",
   },
   {
     role: "RESEARCHER",
     icon: FlaskConical,
     title: "Researchers & Academics",
     description:
-      "Publish models that actually get used. Package your validated models for ClarityRay and reach practitioners the same day.",
-    quote: "My model went from a GitHub repo nobody read to a tool doctors use daily.",
+      "Publish models that actually get used. Package a validated ONNX model with a clarity.json spec using the clarity CLI and reach practitioners — no runtime code changes required.",
+    quote:
+      "My model went from a GitHub repo nobody read to a tool people actually run.",
     color: "text-amber-400",
     bgColor: "bg-amber-400/10",
     borderColor: "border-amber-400/30",
+  },
+  {
+    role: "DEVELOPER",
+    icon: Code,
+    title: "Developers & Contributors",
+    description:
+      "A typed, open-source Next.js + ONNX runtime with a clean model contract and documented architecture invariants. Inspect it, extend it, or onboard a new model with only a spec and a model file.",
+    quote:
+      "Finally, a medical AI tool I can read top to bottom and build on.",
+    color: "text-blue-400",
+    bgColor: "bg-blue-400/10",
+    borderColor: "border-blue-400/30",
   },
 ];
 
